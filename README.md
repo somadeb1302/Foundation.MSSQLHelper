@@ -1,1 +1,3 @@
-# Foundation.MSSQLHelper
+# MSSQLHelper
+
+Microsoft SQL Server Hepler Library
