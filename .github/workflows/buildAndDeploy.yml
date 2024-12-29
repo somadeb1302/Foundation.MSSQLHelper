@@ -24,9 +24,9 @@ jobs:
       - name: "pack and push"
         env:
           API_KEY: ${{ secrets.NUGET_API_KEY }}
-          API_SOURCE: https://nuget.pkg.github.com/MCCITGIT/index.json
+          API_SOURCE: https://nuget.pkg.github.com/somadeb1302/index.json
           NUGET_VERSION: 0.0.1
         run: |
-          dotnet build -c Release ./src/MCC.Foundation.MSSQLHelper.sln
-          dotnet pack ./src/MCC.Foundation.MSSQLHelper.csproj -p:PackageVersion=$NUGET_VERSION -o .
+          dotnet build -c Release ./src/Foundation.MSSQLHelper.sln
+          dotnet pack ./src/Foundation.MSSQLHelper.csproj -p:PackageVersion=$NUGET_VERSION -o .
           dotnet nuget push **/*$NUGET_VERSION*.nupkg -k $API_KEY -s $API_SOURCE --skip-duplicate
